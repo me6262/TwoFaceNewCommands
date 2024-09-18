@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.RobotBase;
 /**
  * Do NOT add any static variables to this class, or any initialization at all. Unless you know what
  * you are doing, do not modify this file except to change the parameter class to the startRobot
- * call.
+ * call. If you are in this file at all, you do not need to be
  */
 public final class Main {
   private Main() {}
@@ -20,6 +20,11 @@ public final class Main {
    * <p>If you change your main robot class, change the parameter type.
    */
   public static void main(String... args) {
+   // this line of code basically starts the robot.
+   //RobotBase is a class that manages the different modes
+   // such as enabled, disabled, teleop, and autonomous.
+   // it does most of the heavy lifting to schedule all of the different commands to happen in the right order.
+   //nothing needs to change in this file, it just starts things.
     RobotBase.startRobot(Robot::new);
   }
 }

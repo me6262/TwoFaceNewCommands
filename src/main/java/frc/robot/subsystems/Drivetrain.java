@@ -2,38 +2,39 @@ package frc.robot.subsystems;
 
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
 
 
-    WPI_TalonSRX leftLeader, rightLeader, leftFollower, rightFollower;
+    WPI_TalonSRX leftLeader;
+    WPI_TalonSRX rightLeader;
+    WPI_TalonSRX leftFollower;
+    WPI_TalonSRX rightFollower;
 
-    DifferentialDrive diff;
 
+
+    // this method is run whenever someone types "new Drivetrain();"
+    // it's called a constructor, since it should do everything required to "construct" this object
+    //
+    // there's a problem, it's not finished. we made 4 motor controllers above, but we never constructed them.
+    // one has been constructed for you,
+    // but youll have to do the rest and find what CAN ID's are assigned to the other 3 motors
     public Drivetrain() {
-        // TODO: Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
-        //       in the constructor or in the robot coordination class, such as RobotContainer.
-        //       Also, you can call addChild(name, sendableChild) to associate sendables with the subsystem
-        //       such as SpeedControllers, Encoders, DigitalInputs, etc.
+
         leftLeader = new WPI_TalonSRX(5);
-        leftFollower = new WPI_TalonSRX(6);
-        rightFollower = new WPI_TalonSRX(7);
-        rightLeader = new WPI_TalonSRX(8);
+        // make new WPI_TalonSRX's for each of the drivetrain motors
+        // the names of the variables are on lines 10-13
 
-        leftFollower.follow(leftLeader);
-
-        rightFollower.follow(rightLeader);
-
-        leftFollower.setInverted(true);
-        leftLeader.setInverted(true);
-
-
-        diff = new DifferentialDrive(leftLeader, rightLeader);
     }
+
+
+
+    // we will use this method later to get the robot to drive
+    // right now, It does nothing.
+    // you already know how to run a motor, right?
+    // just use the variables "left" and "right" defined below as the speeds for your leader motors.
     public void drive(double left, double right){
-        diff.tankDrive(left, right);
     }
 }
 

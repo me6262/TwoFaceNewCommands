@@ -11,17 +11,13 @@ import frc.robot.subsystems.Launcher;
 import frc.robot.subsystems.Serializer;
 
 /**
- * The VM is configured to automatically run this class, and to call the functions corresponding to
- * each mode, as described in the TimedRobot documentation. If you change the name of this class or
- * the package after creating this project, you must also update the build.gradle file in the
- * project.
+ * This Class is used by the Main.java file to start and maintain the robot
+ * this is the junction where all of the separate parts of the robot come to.
  */
 public class Robot extends TimedRobot {
 
   public static Drivetrain drivetrain;
-  public static OI oi;
-  public static Serializer serializer;
-  public static Launcher launcher;
+  public static Mappings mappings;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -31,10 +27,6 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    drivetrain = new Drivetrain();
-    serializer = new Serializer();
-    launcher = new Launcher();
-    oi = new OI();
   }
 
 
