@@ -36,5 +36,22 @@ public class Drivetrain extends SubsystemBase {
     // just use the variables "left" and "right" defined below as the speeds for your leader motors.
     public void drive(double left, double right){
     }
+
+    // arcade drive is when the left joystick is used for forward and reverse,
+    // and the right is used for rotation
+    // If you want to do this as a fun challenge later, you can
+    // there are two ways to do it.
+    // you can either find the math behind the calculations online,
+    // or you can look up the java class that does it for you online, whatever is more fun for you
+    public void arcadeDrive(double xSpeed, double yRotation) {
+
+    }
 }
+
+
+
+
+
+
+
 

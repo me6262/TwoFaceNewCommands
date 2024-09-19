@@ -7,8 +7,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.Launcher;
-import frc.robot.subsystems.Serializer;
 
 /**
  * This Class is used by the Main.java file to start and maintain the robot
@@ -16,8 +14,16 @@ import frc.robot.subsystems.Serializer;
  */
 public class Robot extends TimedRobot {
 
+
+  // these are static variables. you will learn about them when you get to commands.
   public static Drivetrain drivetrain;
   public static Mappings mappings;
+
+
+  //here is where you should define your motor controller from the first lesson
+
+
+
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -25,8 +31,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-    // autonomous chooser on the dashboard.
+
   }
 
 
@@ -56,11 +61,19 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit() {
-    // This makes sure that the autonomous stops running when
-    // teleop starts running. If you want the autonomous to
-    // continue until interrupted by another command, remove
-    // this line or comment it out.
+   // we will put some simple motor code here for initial testing
 
+  }
+
+
+  // we will use the autonomous functions after we learn about sensors and finish up the drivetrain
+  @Override
+  public void autonomousInit() {
+  //TODO: HAYDEN, ADD A NAVX FOR SENSING TO DO GYRO IN AUTOS
+  }
+
+  @Override
+  public void autonomousPeriodic() {
   }
 
   /** This function is called periodically during operator control. */
