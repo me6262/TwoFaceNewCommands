@@ -25,9 +25,9 @@ public class DriveCommand extends CommandBase {
 
     @Override
     public void execute() {
-        double left = OI.controller.getLeftY();
+        double left = -OI.controller.getLeftY();
 
-        double right = OI.controller.getRightY();
+        double right = -OI.controller.getRightY();
 
 
         drivetrain.drive(left, right);
