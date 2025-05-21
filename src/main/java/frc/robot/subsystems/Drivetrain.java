@@ -2,6 +2,7 @@ package frc.robot.subsystems;
 
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
@@ -21,19 +22,24 @@ public class Drivetrain extends SubsystemBase {
     // one has been constructed for you,
     // but youll have to do the rest and find what CAN ID's are assigned to the other 3 motors
     public Drivetrain() {
-
+        // TODO: Set the default command, if any, for this subsystem by calling setDefaultCommand(command)
+        //       in the constructor or in the robot coordination class, such as RobotContainer.
+        //       Also, you can call addChild(name, sendableChild) to associate sendables with the subsystem
+        //       such as SpeedControllers, Encoders, DigitalInputs, etc.
         leftLeader = new WPI_TalonSRX(5);
-        // make new WPI_TalonSRX's for each of the drivetrain motors
-        // the names of the variables are on lines 10-13
+        leftFollower = new WPI_TalonSRX(6);
+        rightFollower = new WPI_TalonSRX(7);
+        rightLeader = new WPI_TalonSRX(8);
+
+        leftFollower.follow(leftLeader);
+
+        rightFollower.follow(rightLeader);
+
+        leftFollower.setInverted(true);
+        leftLeader.setInverted(true);
+
 
     }
-
-
-
-    // we will use this method later to get the robot to drive
-    // right now, It does nothing.
-    // you already know how to run a motor, right?
-    // just use the variables "left" and "right" defined below as the speeds for your leader motors.
     public void drive(double left, double right){
     }
 
